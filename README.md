@@ -1,13 +1,4 @@
-# Project Name: AV_Test
-
 This repository contains the source code and a demo dataset for the manuscript: **"Mobility inequality in global cities via dual-layer concentration of autonomous vehicle services"**.
-
----
-
-## Required Components Checklist
-- [x] Compiled standalone software and/or source code
-- [x] A small (simulated or real) dataset to demo the software/code
-- [x] README file (this document)
 
 ---
 
@@ -15,9 +6,7 @@ This repository contains the source code and a demo dataset for the manuscript: 
 
 ### Operating Systems
 * **Tested OS:** This software has been tested on the following systems:
-    * macOS: <e.g., Ventura 13.5>
-    * Linux: <e.g., Ubuntu 22.04 LTS>
-    * Windows: <e.g., Windows 11>
+    * macOS: <Tahoe 26.5>
 
 ### Software Dependencies & Version Numbers
 The project requires both Python and R environments. The specific versions tested and required are:
@@ -25,18 +14,18 @@ The project requires both Python and R environments. The specific versions teste
 #### Python Environment
 * **Python Version:** 3.9.16
 * **Required Packages:**
-    * <package_name_1> (>= version)
-    * <package_name_2> (>= version)
-    *(Note: All python dependencies are also listed in requirements.txt)*
+    *All python dependencies are also listed in requirements.txt*
 
 #### R Environment
 * **R Version:** 4.5.2
 * **Required Packages:**
-    * <package_name_1> (>= version)
-    * <package_name_2> (>= version)
+    * tidyverse (>= 2.0.0)
+    * lme4 (>= 1.1-38)
+    * broom.mixed (>=0.2.9.6)
+    * spdep (>=1.4-1)
 
 ### Non-Standard Hardware Requirements
-* <State "None" OR describe specific hardware if required, e.g., "NVIDIA GPU with CUDA capability (minimum 8GB VRAM) is required. Standard desktop computers without a GPU can run the analysis but at a slower speed.">
+* None
 
 ---
 
@@ -48,7 +37,7 @@ Step 1: Clone the Repository
 $git clone https://github.com/<your-username>/<your-repo-name>.git$ cd <your-repo-name>
 
 Step 2: Python Environment Setup (Recommended using conda)
-$conda create -n nature_env python=3.9.16 -y$ conda activate nature_env
+$ conda create -n nature_env python=3.9.16 -y$ conda activate nature_env
 $ pip install -r requirements.txt
 
 Step 3: R Environment Setup
@@ -56,13 +45,13 @@ Open your R console and run:
 install.packages(c("<package_1>", "<package_2>"))
 
 ### Typical Install Time
-* **Estimated Time:** Approximately <e.g., 5-10 minutes> on a "normal" desktop computer (dependent on internet speed for downloading packages).
+* **Estimated Time:** Approximately 10 minutes on a "normal" desktop computer (dependent on internet speed for downloading packages).
 
 ---
 
 ## 3. Demo
 
-We provide a small simulated/real dataset in the /demo_data folder to test the pipeline.
+We provide a small real dataset in the /demo_data folder to test the pipeline.
 
 ### Instructions to Run on Demo Data
 1. Run the Python processing step:
@@ -95,6 +84,6 @@ Rscript main_analysis.R --input <path_to_python_output> --output <path_to_final_
 
 ### (OPTIONAL) Reproduction Instructions
 To fully reproduce the findings, figures, and tables presented in the manuscript:
-1. Download the full public dataset from <insert DOI link or database accession number>.
+1. Download the full public dataset from https://drive.google.com/file/d/1YwxumgjKuW3JZwpIrZQ0mWAHTRJeYV63/view?usp=drive_link.
 2. Place the raw data in the /data directory.
 3. Execute the master reproduction script: bash run_reproduction_pipeline.sh
