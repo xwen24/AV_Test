@@ -34,11 +34,13 @@ The project requires both Python and R environments. The specific versions teste
 ### Instructions
 
 Step 1: Clone the Repository
-$git clone https://github.com/<your-username>/<your-repo-name>.git$ cd <your-repo-name>
+git clone https://github.com/xwen24/AV_Test.git
+cd AV_Test
 
 Step 2: Python Environment Setup (Recommended using conda)
-$ conda create -n nature_env python=3.9.16 -y$ conda activate nature_env
-$ pip install -r requirements.txt
+conda create -n nature_env python=3.9.16 -y
+conda activate nature_env
+pip install -r requirements.txt
 
 Step 3: R Environment Setup
 Open your R console and run:
@@ -77,29 +79,24 @@ Upon successful execution, the software will automatically generate the followin
 ### How to Run the Software on Your Data
 To apply this pipeline to your own datasets, please format your input files identically to the provided files in the `Data/` directory.
 
-CRITICAL: The source code files inside the `src/` directory must be executed sequentially based on the prefix of their filenames (from 1 to 10). 
+CRITICAL: The scripts in `src/` must be executed in numerical order according to their filename prefixes. 
 
 Please run the 10 scripts strictly in the following numerical order:
 
-1. [Python] Step 1 - python src/Data_Check_1.py
+The main functionality of each script is summarized below.
 
-2. [Python] Step 2 - python src/Total_Dist_2.py
-
-3. [Python] Step 3 - python src/City_Dist_3.py
-
-4. [Python] Step 4 - python src/Area_Calc_4.py
-
-5. [Python] Step 5 - python src/Road_Calc_5.py
-
-6. [Python] Step 6 - python src/Global_Comp_6.py
-
-7. [Python] Step 7 - python src/Bias_Analysis_7.py
-
-8. [Python] Step 8 - python src/EB_Comp_8.py
-
-9. [R] Step 9 - Rscript src/Intra_City_9.R
-
-10. [Python] Step 10 - python src/Intra_City_10.py
+| Step | Script | Language | Functionality |
+|---:|---|---|---|
+| 1 | `Data_Check_1.py` | Python | Checks and standardizes raw GeoJSON files. It normalizes longitude coordinates and overwrites the corrected GeoJSON files. |
+| 2 | `Total_Dist_2.py` | Python | Processes AV service-area boundaries, organizes raw GeoJSON files by country, merges service areas at the city level, intersects them with global built-up urban-area data, and generates city-, corporation-, and built-up-area maps. |
+| 3 | `City_Dist_3.py` | Python | Produces global distribution maps of AV-served cities. It geocodes cities, calculates GDP per capita, extracts climate types, counts AV service providers by city, and generates global and regional visualization outputs. |
+| 4 | `Area_Calc_4.py` | Python | Calculates the AV-served built-up area and estimated covered population for each city by intersecting AV service areas with GHS-UCDB urban-center data. It also generates summary plots of absolute and percentage coverage. |
+| 5 | `Road_Calc_5.py` | Python | Downloads or loads road-network data from OpenStreetMap, calculates road mileage, intersection counts, traffic signals, stop signs, and roundabouts for AV-served and AV-unserved areas, and generates road-network summary plots. |
+| 6 | `Global_Comp_6.py` | Python | Performs global comparison between AV-served and AV-unserved cities. It computes socioeconomic, environmental, terrain, road-network, and POI-based indicators, and generates comparative statistical plots. |
+| 7 | `Bias_Analysis_7.py` | Python | Analyzes deployment bias and compatibility gaps between AV-served and AV-unserved cities. It computes correlation, VIF, radar charts, TOPSIS/VIKOR-based deployment compatibility gaps, regional inequality plots, and potential deployment city rankings. |
+| 8 | `EB_Comp_8.py` | Python | Conducts entropy-balancing analysis to compare AV-served and AV-unserved cities within countries. It estimates weighted treatment differences, checks covariate balance, runs robustness checks, and generates balance and regression visualizations. |
+| 9 | `Intra_City_9.R` | R | Runs intra-city generalized linear mixed models. It merges grid-level indicators, standardizes variables within cities, fits main and robustness GLMMs, calculates VIF, Moran’s I, diagnostics, and prediction outputs for ROC analysis. |
+| 10 | `Intra_City_10.py` | Python | Generates intra-city grid-level indicators and final figures. It creates city grids, calculates night-time light, slope, road density, road entropy, sinuosity, intersection complexity, transit-station distance, and POI richness, and produces diagnostic and visualization outputs. |
 
 ### (OPTIONAL) Reproduction Instructions
 To fully reproduce the findings, figures, and tables presented in the manuscript:
