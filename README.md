@@ -1,4 +1,4 @@
-This repository contains the source code and a demo dataset for the manuscript: **"Mobility inequality in global cities via dual-layer concentration of autonomous vehicle services"**.
+This repository contains the source code and a dataset link for the manuscript: **"Mobility inequality in global cities via dual-layer concentration of autonomous vehicle services"**.
 
 ---
 
