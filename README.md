@@ -98,7 +98,7 @@ The main functionality of each script is summarized below.
 | 9 | `Intra_City_9.R` | R | Runs intra-city generalized linear mixed models. It merges grid-level indicators, standardizes variables within cities, fits main and robustness GLMMs, calculates VIF, Moran’s I, diagnostics, and prediction outputs for ROC analysis. |
 | 10 | `Intra_City_10.py` | Python | Generates intra-city grid-level indicators and final figures. It creates city grids, calculates night-time light, slope, road density, road entropy, sinuosity, intersection complexity, transit-station distance, and POI richness, and produces diagnostic and visualization outputs. |
 
-### (OPTIONAL) Reproduction Instructions
+### Reproduction Instructions
 To fully reproduce the findings, figures, and tables presented in the manuscript:
 1. Download the full public dataset from https://drive.google.com/file/d/1YwxumgjKuW3JZwpIrZQ0mWAHTRJeYV63/view?usp=drive_link.
 2. Place the raw data in the Data/ directory.
