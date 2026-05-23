@@ -42,7 +42,7 @@ $ pip install -r requirements.txt
 
 Step 3: R Environment Setup
 Open your R console and run:
-install.packages(c("<package_1>", "<package_2>"))
+install.packages(c("tidyverse", "lme4", "broom.mixed", "spdep"))
 
 ### Typical Install Time
 * **Estimated Time:** Approximately 10 minutes on a "normal" desktop computer (dependent on internet speed for downloading packages).
